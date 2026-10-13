@@ -40,7 +40,7 @@ jobs:
       - name: Generate declared-dependency SBOM
         run: cyclonedx-py requirements requirements.txt --output-format JSON -o /tmp/sbom.cdx.json
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: security-reports
