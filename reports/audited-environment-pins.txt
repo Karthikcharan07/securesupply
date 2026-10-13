@@ -38,7 +38,7 @@ numpy==2.3.5
 opentelemetry-api==1.45.1
 packageurl-python==0.17.6
 packaging==26.3
-pandas==2.2.3
+pandas==3.0.6
 pip-requirements-parser==32.0.1
 pip==26.2.1
 pip_api==0.0.35
