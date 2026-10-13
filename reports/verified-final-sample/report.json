@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-13T18:16:06.152445+00:00",
+  "repository": "safe-repo",
+  "vulnerability_service": "osv",
+  "scope": {
+    "files": 3,
+    "bytes": 250,
+    "skipped_links_or_configs": 0,
+    "excluded_directories": [
+      ".git",
+      ".pytest_cache",
+      ".ruff_cache",
+      ".venv",
+      "__pycache__",
+      "models",
+      "node_modules",
+      "reports",
+      "venv"
+    ]
+  },
+  "checks": [
+    {
+      "tool": "dependencies",
+      "status": "passed",
+      "detail": "0 findings",
+      "findings": []
+    },
+    {
+      "tool": "bandit",
+      "status": "passed",
+      "detail": "0 findings",
+      "findings": []
+    },
+    {
+      "tool": "gitleaks",
+      "status": "passed",
+      "detail": "0 findings",
+      "findings": []
+    },
+    {
+      "tool": "sbom",
+      "status": "passed",
+      "detail": "CycloneDX SBOM generated from declared package pins",
+      "findings": []
+    },
+    {
+      "tool": "trivy",
+      "status": "failed",
+      "detail": "1 findings",
+      "findings": [
+        {
+          "tool": "trivy",
+          "rule": "DS-0026",
+          "severity": "LOW",
+          "message": "No HEALTHCHECK defined",
+          "file": "Dockerfile",
+          "line": 0,
+          "package": "",
+          "version": "",
+          "fixes": []
+        }
+      ]
+    }
+  ],
+  "gate": {
+    "fail_on": "HIGH",
+    "fail_unknown": true,
+    "required": [
+      "bandit",
+      "dependencies",
+      "gitleaks",
+      "sbom",
+      "trivy"
+    ]
+  },
+  "exit_code": 0,
+  "gate_message": "Configured gate passed; inspect check coverage"
+}

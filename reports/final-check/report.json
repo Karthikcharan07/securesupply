@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-13T19:23:24.788822+00:00",
+  "repository": "safe-repo",
+  "vulnerability_service": "osv",
+  "scope": {
+    "files": 3,
+    "bytes": 353,
+    "skipped_links_or_configs": 0,
+    "excluded_directories": [
+      ".git",
+      ".pytest_cache",
+      ".ruff_cache",
+      ".venv",
+      "__pycache__",
+      "models",
+      "node_modules",
+      "reports",
+      "venv"
+    ]
+  },
+  "checks": [
+    {
+      "tool": "dependencies",
+      "status": "passed",
+      "detail": "0 findings",
+      "findings": []
+    },
+    {
+      "tool": "bandit",
+      "status": "passed",
+      "detail": "0 findings",
+      "findings": []
+    },
+    {
+      "tool": "gitleaks",
+      "status": "passed",
+      "detail": "0 findings",
+      "findings": []
+    },
+    {
+      "tool": "sbom",
+      "status": "passed",
+      "detail": "CycloneDX SBOM generated from declared package pins",
+      "findings": []
+    },
+    {
+      "tool": "trivy",
+      "status": "passed",
+      "detail": "0 findings",
+      "findings": []
+    }
+  ],
+  "gate": {
+    "fail_on": "HIGH",
+    "fail_unknown": true,
+    "required": [
+      "bandit",
+      "dependencies",
+      "gitleaks",
+      "sbom",
+      "trivy"
+    ]
+  },
+  "exit_code": 0,
+  "gate_message": "Configured gate passed; inspect check coverage"
+}
